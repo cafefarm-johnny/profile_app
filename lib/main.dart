@@ -18,9 +18,10 @@ class ProfileApp extends StatelessWidget {
               alignment: Alignment.topCenter,
               child: FractionallySizedBox(
                 heightFactor: 0.5,
-                child: Container(
-                  color: Colors.blueAccent,
-                ),
+                child: Image.asset(
+                  "images/bg.jpeg",
+                  fit: BoxFit.cover,
+                )
               ),
             ),
             Align(
