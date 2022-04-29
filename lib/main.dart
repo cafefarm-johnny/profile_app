@@ -19,7 +19,7 @@ class ProfileApp extends StatelessWidget {
               child: FractionallySizedBox(
                 heightFactor: 0.5,
                 child: Image.asset(
-                  "images/bg.jpeg",
+                  "assets/images/bg.jpeg",
                   fit: BoxFit.cover,
                 )
               ),
@@ -29,8 +29,82 @@ class ProfileApp extends StatelessWidget {
               child: FractionallySizedBox(
                 heightFactor: 0.5,
                 child: Container(
-                  color: Colors.redAccent,
-                ),
+                  color: Colors.black87,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text(
+                        "Hi, I'm Johnny",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 25,
+                          fontFamily: "Maplestory",
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 50,
+                      ),
+                      const Text(
+                        "I like bask in the sun with nap.",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontFamily: "Maplestory",
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                      const Divider(
+                        color: Colors.grey,
+                        height: 100,
+                        indent: 50,
+                        endIndent: 50,
+                        thickness: 0.5,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          ClipOval(
+                            child: SizedBox(
+                              width: 50,
+                              height: 50,
+                              child: IconButton(
+                                color: Colors.white,
+                                iconSize: 35,
+                                icon: const Icon(Icons.email),
+                                onPressed: () {}
+                              ),
+                            ),
+                          ),
+                          ClipOval(
+                            child: SizedBox(
+                              width: 50,
+                              height: 50,
+                              child: IconButton(
+                                color: Colors.white, 
+                                iconSize: 35,
+                                icon: const Icon(Icons.account_circle),
+                                onPressed: () {},
+                              ),
+                            ),
+                          ),
+                          ClipOval(
+                            child: SizedBox(
+                              width: 50,
+                              height: 50,
+                              child: IconButton(
+                                color: Colors.white,
+                                iconSize: 35,
+                                icon: const Icon(Icons.rss_feed_sharp),
+                                onPressed: () {},
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                )
               ),
             ),
             Center(

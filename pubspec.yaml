@@ -25,4 +25,12 @@ flutter:
   uses-material-design: true
 
   assets:
-    - images/
+    - assets/images/
+
+  fonts:
+    - family: Maplestory
+      fonts:
+        - asset: assets/fonts/Maplestory_OTF_Bold.otf
+          weight: 700
+        - asset: assets/fonts/Maplestory_OTF_Light.otf
+          weight: 300
