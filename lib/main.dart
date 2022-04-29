@@ -9,9 +9,41 @@ class ProfileApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(),
+      home: Scaffold(
+        body: Stack(
+          children: [
+            Align(
+              alignment: Alignment.topCenter,
+              child: FractionallySizedBox(
+                heightFactor: 0.5,
+                child: Container(
+                  color: Colors.blueAccent,
+                ),
+              ),
+            ),
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: FractionallySizedBox(
+                heightFactor: 0.5,
+                child: Container(
+                  color: Colors.redAccent,
+                ),
+              ),
+            ),
+            Center(
+              child: ClipOval(
+                child: Container(
+                  width: 150,
+                  height: 150,
+                  color: Colors.greenAccent,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
