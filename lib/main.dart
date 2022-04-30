@@ -109,10 +109,25 @@ class ProfileApp extends StatelessWidget {
             ),
             Center(
               child: ClipOval(
-                child: Container(
+                child: SizedBox(
                   width: 150,
                   height: 150,
-                  color: Colors.greenAccent,
+                  child: ClipOval(
+                    child: SizedBox(
+                      child: AnimatedCrossFade(
+                          firstChild: Image.asset(
+                            "assets/images/prof_1.jpg",
+                          ),
+                          secondChild: Image.asset(
+                              "assets/images/prof_2.jpeg",
+                          ),
+                          crossFadeState: CrossFadeState.showFirst,
+                          duration: const Duration(
+                            seconds: 1
+                          ),
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ),
