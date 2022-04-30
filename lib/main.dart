@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,6 +14,22 @@ class ProfileApp extends StatefulWidget {
 }
 
 class _ProfileAppState extends State<ProfileApp> {
+  var _crossFadeStateFlag = false;
+  var _crossFadeState = CrossFadeState.showFirst;
+
+
+  @override
+  void initState() {
+    super.initState();
+
+    Timer.periodic(const Duration(seconds: 5), (timer) {
+      setState(() {
+        _crossFadeState = _crossFadeStateFlag ? CrossFadeState.showFirst : CrossFadeState.showSecond;
+        _crossFadeStateFlag = !_crossFadeStateFlag;
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -114,7 +132,14 @@ class _ProfileAppState extends State<ProfileApp> {
             ),
             Center(
               child: ClipOval(
-                child: SizedBox(
+                child: Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: Colors.white,
+                      width: 2.0,
+                    ),
+                    borderRadius: BorderRadius.circular(100.0),
+                  ),
                   width: 150,
                   height: 150,
                   child: ClipOval(
@@ -126,10 +151,8 @@ class _ProfileAppState extends State<ProfileApp> {
                         secondChild: Image.asset(
                           "assets/images/prof_2.jpeg",
                         ),
-                        crossFadeState: CrossFadeState.showFirst,
-                        duration: const Duration(
-                            seconds: 1
-                        ),
+                        crossFadeState: _crossFadeState,
+                        duration: const Duration(seconds: 3),
                       ),
                     ),
                   ),
